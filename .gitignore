@@ -1,0 +1,8 @@
+.next
+node_modules
+.sst
+out
+dist
+*.log
+.DS_Store
+.env
