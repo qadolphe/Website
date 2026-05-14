@@ -1,8 +1,12 @@
 .next
 node_modules
 .sst
+.open-next
+.pinksundew
+.vscode
 out
 dist
 *.log
 .DS_Store
 .env
+*.tsbuildinfo
