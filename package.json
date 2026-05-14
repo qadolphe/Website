@@ -11,6 +11,8 @@
     "sst:deploy": "sst deploy"
   },
   "dependencies": {
+    "lucide-react": "^1.16.0",
+    "motion": "^12.38.0",
     "next": "15.5.9",
     "react": "latest",
     "react-dom": "latest"
