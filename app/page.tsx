@@ -4,8 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Calendar, Clock, Coffee, Car, Sparkles } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <main className="flex min-h-[100dvh] flex-col justify-between bg-[#0a0a0a] text-[#ededed] antialiased selection:bg-[#f59e0b] selection:text-black overflow-hidden relative">
       <style dangerouslySetInnerHTML={{ __html: `
@@ -72,7 +79,7 @@ export default function HomePage() {
             {/* Peeking Otter - Delay slightly to appear after card */}
             <motion.div 
               initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              animate={isMounted ? { y: 0, opacity: 1 } : {}}
               transition={{ delay: 0.8, duration: 0.6, type: "spring" }}
               className="absolute -top-[5.2rem] right-4 w-32 h-32 z-20 pointer-events-none drop-shadow-xl"
             >
@@ -87,7 +94,7 @@ export default function HomePage() {
             {/* Top Card (Next Alarm) */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              animate={isMounted ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.4, duration: 0.5 }}
               className="relative rounded-[2.5rem] border border-white/10 bg-[#1c1c1e] p-7 shadow-2xl z-10"
             >
@@ -112,7 +119,7 @@ export default function HomePage() {
             {/* Bottom Card (Applied Rule) - Animated Slide Out */}
             <motion.div 
               initial={{ opacity: 0, y: -40, zIndex: 0 }}
-              animate={{ opacity: 1, y: 16, zIndex: 0 }}
+              animate={isMounted ? { opacity: 1, y: 16, zIndex: 0 } : {}}
               transition={{ delay: 1.2, duration: 0.8, type: "spring", stiffness: 100 }}
               className="relative rounded-[2.5rem] border border-white/10 bg-[#151517] p-7 shadow-xl z-0"
             >
@@ -142,7 +149,7 @@ export default function HomePage() {
       </section>
 
       <footer className="relative z-10 mx-auto w-full max-w-6xl p-6 text-center text-[14px] font-bold text-neutral-600 sm:p-12 font-rounded">
-        <div>© {new Date().getFullYear()} EarlyOtter. All rights reserved.</div>
+        <div>© {isMounted ? new Date().getFullYear() : "2026"} EarlyOtter. All rights reserved.</div>
       </footer>
     </main>
   );
