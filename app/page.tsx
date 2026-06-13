@@ -3,20 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { useEffect, useState, useRef } from "react";
+import { Calendar, Clock, Coffee, Car, Sparkles } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
   const [isMounted, setIsMounted] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
-    const timer = setTimeout(() => {
-      if (videoRef.current) {
-        videoRef.current.play().catch(() => {});
-      }
-    }, 500);
-    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -77,26 +71,104 @@ export default function HomePage() {
         </motion.div>
 
         {/* Right Content - App Representation */}
-        <div className="relative flex flex-1 flex-col items-center justify-center lg:justify-end w-full max-w-xl pt-16 lg:pt-0">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={isMounted ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="relative w-full max-w-[520px] font-rounded z-10 flex justify-center"
-          >
-            <video 
-              ref={videoRef}
-              muted 
-              playsInline
-              className="w-full h-auto object-contain"
+        <div className="relative flex flex-1 flex-col items-center justify-center lg:justify-end w-full max-w-lg pt-16 lg:pt-0">
+          <div className="absolute inset-0 top-1/4 rounded-full bg-white/20 blur-[120px]" />
+          
+          <div className="relative w-full max-w-[380px] font-rounded z-10">
+            {/* Peeking Otter - Delay slightly to appear after card */}
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              animate={isMounted ? { y: 0, opacity: 1 } : {}}
+              transition={{ delay: 0.8, duration: 0.6, type: "spring" }}
+              className="absolute -top-[5.2rem] right-4 w-32 h-32 z-20 pointer-events-none drop-shadow-xl"
             >
-              {/* Safari/Apple devices (HEVC with Alpha) */}
-              <source src="/images/master_transparent-1.mov" type='video/quicktime' />
-              <source src="/images/output.mp4" type='video/mp4; codecs="hvc1"' />
-              {/* Chrome/Firefox/Edge (VP9 with Alpha) */}
-              <source src="/images/0001-0160.webm" type="video/webm" />
-            </video>
-          </motion.div>
+              <Image 
+                src="/images/OtterOverlook.png" 
+                alt="Cute otter peeking over" 
+                fill
+                className="object-contain object-bottom"
+              />
+            </motion.div>
+
+            {/* Top Card (Next Alarm) */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={isMounted ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="relative rounded-[2.5rem] border border-white/10 bg-[#1c1c1e] p-7 shadow-2xl z-10"
+            >
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center justify-between">
+                   <div className="text-[20px] font-bold text-neutral-300">Next Alarm</div>
+                   <Sparkles className="w-5 h-5 text-[#f59e0b] opacity-80" />
+                </div>
+                <div className="mt-1 text-[15px] font-semibold text-neutral-400">In 11 hours, 40 minutes</div>
+                
+                <div className="mt-3 text-[5.5rem] leading-none text-white tracking-tight" style={{ fontWeight: 900 }}>
+                  7:55<span className="text-[2rem] ml-1.5 opacity-90 font-heavy">AM</span>
+                </div>
+                
+                <div className="mt-5 flex items-center justify-between font-bold text-neutral-400 border-t border-white/5 pt-4">
+                  <span className="flex items-center gap-2 text-[15px]"><Calendar className="w-4 h-4 text-[#3b82f6]" /> Biology Class</span>
+                  <span className="text-[14px]">9:00 AM</span>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Bottom Card (Weekly Pill UI) - Animated Slide Out */}
+            <motion.div 
+              initial={{ opacity: 0, y: -40, zIndex: 0 }}
+              animate={isMounted ? { opacity: 1, y: 16, zIndex: 0 } : {}}
+              transition={{ delay: 1.2, duration: 0.8, type: "spring", stiffness: 100 }}
+              className="relative rounded-[2.5rem] border border-white/10 bg-[#151517] p-7 pt-6 shadow-xl z-0 w-full"
+            >
+               <div className="mb-5 text-[17px] font-bold text-white px-1 mt-1">Jun 7 - 13</div>
+               
+               <div className="flex justify-between w-full px-1">
+                  {[
+                    { day: "S", dots: null, elapsed: true, today: false },
+                    { day: "M", dots: { top: 68, bottom: 85, connected: true }, elapsed: true, today: false },
+                    { day: "T", dots: { top: 40, bottom: 65, connected: false }, elapsed: true, today: false },
+                    { day: "W", dots: { top: 45, bottom: 58, connected: true }, elapsed: false, today: true },
+                    { day: "Th", dots: { top: 72, bottom: 85, connected: true }, elapsed: false, today: false },
+                    { day: "F", dots: { top: 72, bottom: 85, connected: true }, elapsed: false, today: false },
+                    { day: "S", dots: null, elapsed: false, today: false },
+                  ].map((item, i) => (
+                    <div key={i} className="flex flex-col items-center gap-3">
+                      <span className={`text-[12px] font-bold ${item.today ? 'text-white' : 'text-neutral-500'}`}>
+                        {item.day}
+                      </span>
+                      <div className={`relative w-[32px] sm:w-[36px] h-[190px] rounded-full border-[2px] ${item.today ? 'border-[#f59e0b] bg-[#f59e0b]/10' : 'border-[#f59e0b]/40 bg-[#f59e0b]/[0.02]'} ${item.elapsed ? 'opacity-40' : 'opacity-100'}`}>
+                        {item.dots && (
+                          <>
+                            {item.dots.connected && (
+                              <div 
+                                className="absolute left-1/2 w-[2px] -translate-x-1/2 border-l-[2px] border-dashed border-[#f59e0b]/80" 
+                                style={{ top: `${item.dots.top}%`, height: `${item.dots.bottom - item.dots.top}%` }}
+                              />
+                            )}
+                            {/* Alarm Dot */}
+                            <div 
+                              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-[18px] h-[18px] rounded-full bg-[#151517] shadow-sm"
+                              style={{ top: `${item.dots.top}%` }}
+                            >
+                              <div className="w-[9px] h-[9px] rounded-full bg-[#f59e0b]" />
+                            </div>
+                            {/* Event Dot */}
+                            <div 
+                              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-[18px] h-[18px] rounded-full bg-[#151517] shadow-sm"
+                              style={{ top: `${item.dots.bottom}%` }}
+                            >
+                              <div className="w-[9px] h-[9px] rounded-full bg-[#3b82f6]" />
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+               </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
