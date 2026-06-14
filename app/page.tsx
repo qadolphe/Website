@@ -92,7 +92,7 @@ export default function HomePage() {
           </h1>
           
           <p className="mb-10 max-w-lg text-[19px] font-semibold leading-relaxed text-black/70 sm:text-[22px]">
-            A beautiful, privacy-first smart alarm natively synced with your schedule. No more morning math.
+            A friendly otter to brighten your day.
           </p>
 
           <Link href="https://apps.apple.com/us/app/earlyotter/id6766083287" target="_blank" className="group flex items-center justify-center rounded-2xl bg-black px-8 py-4 text-[18px] text-white shadow-lg hover:bg-neutral-800 transition-all hover:scale-[1.02] active:scale-95" style={{ fontWeight: 800 }}>
