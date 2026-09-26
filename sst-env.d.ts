@@ -5,9 +5,25 @@
 
 declare module "sst" {
   export interface Resource {
+    "EarlyOtterFeedback": {
+      "name": string
+      "type": "sst.aws.Bucket"
+    }
+    "EarlyOtterTelemetry": {
+      "name": string
+      "type": "sst.aws.Dynamo"
+    }
     "EarlyOtterWeb": {
       "type": "sst.aws.Nextjs"
       "url": string
+    }
+    "FeedbackViewerPassword": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "NextServerActionsEncryptionKey": {
+      "type": "sst.sst.Secret"
+      "value": string
     }
   }
 }

@@ -26,7 +26,7 @@ export default function PrivacyPage() {
           <h1 className="text-5xl leading-[1.05] tracking-tight text-white sm:text-7xl" style={{ fontWeight: 900 }}>
             Privacy.
           </h1>
-          <p className="mt-6 text-lg font-bold text-neutral-500">Last Updated: May 2026</p>
+          <p className="mt-6 text-lg font-bold text-neutral-500">Last Updated: August 2026</p>
         </div>
 
         <div className="space-y-12 text-lg font-medium leading-relaxed text-neutral-400">
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>4. Data Storage & Protection</h2>
-            <p>All Google user data is processed and stored strictly locally on your Apple device. EarlyOtter has no external backend servers or databases. Your calendar data never leaves your device and is protected by iOS&apos;s standard sandbox security.</p>
+            <p>All Google user data is processed and stored strictly locally on your Apple device. Your calendar data never leaves your device and is protected by iOS&apos;s standard sandbox security. EarlyOtter&apos;s optional feedback service is separate and never receives calendar data.</p>
           </section>
 
           <section>
@@ -57,7 +57,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>6. Data Retention & Deletion</h2>
-            <p>Because data is only stored locally, your Google Calendar data is retained only as long as you keep the app installed and your account connected. You can permanently delete this data at any time by disconnecting your Google account within the app&apos;s settings or by uninstalling the EarlyOtter application from your device.</p>
+            <p>Your Google Calendar data is retained only as long as you keep the app installed and your account connected. You can permanently delete it by disconnecting your Google account or uninstalling EarlyOtter. Optional feedback is retained for up to 12 months. To request its deletion, contact us with enough detail to identify the submission.</p>
           </section>
 
           <section>
@@ -68,10 +68,16 @@ export default function PrivacyPage() {
           <section>
             <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>8. Analytics and Crash Reporting</h2>
             <p>We may collect standard, anonymized crash reports provided by Apple to help improve the stability of the application. This data is not linked to your personal identity or your calendar events.</p>
+            <p className="mt-4">EarlyOtter also sends anonymous usage events to EarlyOtter&apos;s own servers, hosted on Amazon Web Services, so we can see whether the app works as intended. Examples include finishing setup, whether a permission was granted, how many alarms are scheduled, and which features were used. Each install is identified only by a random ID created by the app, which is not linked to your Apple ID, Google account, or device identifiers. Events never include calendar event titles, times, locations, attendees, or account details. We keep only your two-letter country code and never store your IP address. Usage data is kept for up to 400 days after your last activity. It is never sold or shared with third parties. You can turn it off at any time in the app under Settings → Share Anonymous Usage Data.</p>
           </section>
 
           <section>
-            <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>9. Contact Us</h2>
+            <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>9. Optional Feedback</h2>
+            <p>Submitting feedback is voluntary. If you choose to send feedback, EarlyOtter saves the category and message you provide along with the app version, build number, and iOS version. We do not include calendar data, account details, or device identifiers. Feedback is stored privately using Amazon Web Services and used only to support and improve EarlyOtter.</p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>10. Contact Us</h2>
             <p>If you have any questions, contact <a href="mailto:support@earlyotter.com" className="text-[#f59e0b] hover:text-white transition-colors">support@earlyotter.com</a>.</p>
           </section>
         </div>
