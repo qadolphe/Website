@@ -37,7 +37,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>2. Google User Data Accessed</h2>
-            <p>EarlyOtter requests access to your Google Calendar data. Specifically, the application reads the start times of your scheduled events to calculate accurate wake-up times.</p>
+            <p>EarlyOtter requests access to your Google Calendar data. Specifically, the application reads your events&apos; start times, titles, and locations, which it uses to calculate wake-up times, apply the rules you set up, and label each alarm with its event.</p>
           </section>
 
           <section>
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>4. Data Storage & Protection</h2>
-            <p>All Google user data is processed and stored strictly locally on your Apple device. Your calendar data never leaves your device and is protected by iOS&apos;s standard sandbox security. EarlyOtter&apos;s optional feedback service is separate and never receives calendar data.</p>
+            <p>All Google user data is processed and stored strictly locally on your Apple device. Your calendar data never leaves your device and is protected by iOS&apos;s standard sandbox security. EarlyOtter&apos;s optional feedback and anonymous usage data are separate and never include calendar data.</p>
           </section>
 
           <section>
