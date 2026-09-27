@@ -26,7 +26,7 @@ export default function PrivacyPage() {
           <h1 className="text-5xl leading-[1.05] tracking-tight text-white sm:text-7xl" style={{ fontWeight: 900 }}>
             Privacy.
           </h1>
-          <p className="mt-6 text-lg font-bold text-neutral-500">Last Updated: August 2026</p>
+          <p className="mt-6 text-lg font-bold text-neutral-500">Last Updated: September 2026</p>
         </div>
 
         <div className="space-y-12 text-lg font-medium leading-relaxed text-neutral-400">
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>8. Analytics and Crash Reporting</h2>
             <p>We may collect standard, anonymized crash reports provided by Apple to help improve the stability of the application. This data is not linked to your personal identity or your calendar events.</p>
-            <p className="mt-4">EarlyOtter also sends anonymous usage events to EarlyOtter&apos;s own servers, hosted on Amazon Web Services, so we can see whether the app works as intended. Examples include finishing setup, whether a permission was granted, how many alarms are scheduled, and which features were used. Each install is identified only by a random ID created by the app, which is not linked to your Apple ID, Google account, or device identifiers. Events never include calendar event titles, times, locations, attendees, or account details. We keep only your two-letter country code and never store your IP address. Usage data is kept for up to 400 days after your last activity. It is never sold or shared with third parties. You can turn it off at any time in the app under Settings → Share Anonymous Usage Data.</p>
+            <p className="mt-4">EarlyOtter also sends anonymous usage events to EarlyOtter&apos;s own servers, hosted on Amazon Web Services, so we can see whether the app works as intended. Examples include finishing setup, whether a permission was granted, how many alarms are scheduled, and which features were used. Each install is identified only by a random ID created by the app, which is not linked to your Apple ID, Google account, or device identifiers. Events never include calendar event titles, times, locations, attendees, or account details. We keep only your two-letter country code and never store your IP address. Usage data is kept for up to 400 days after your last activity. It is never sold or shared with third parties. You can turn it off at any time in the app under Settings → Permissions → Share Usage Data.</p>
           </section>
 
           <section>
