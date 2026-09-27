@@ -38,7 +38,7 @@ export const telemetryEventSchema = z.discriminatedUnion("name", [
   event("feedback_submitted", { category: z.enum(["experience", "suggestion", "issue"]) }),
 ]);
 
-export const telemetryChannelSchema = z.enum(["debug", "testflight", "appstore"]);
+export const telemetryChannelSchema = z.enum(["debug", "testflight", "internal", "appstore"]);
 
 export const telemetryBatchSchema = z
   .object({
