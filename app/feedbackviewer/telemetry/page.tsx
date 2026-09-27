@@ -159,9 +159,8 @@ export default async function TelemetryPage({ searchParams }: TelemetryPageProps
               </Card>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2">
               <BreakdownCard title="App versions" data={summary.versions} />
-              <BreakdownCard title="Countries" data={summary.countries} />
               <BreakdownCard title="Calendar providers" data={summary.providers} />
             </div>
           </div>

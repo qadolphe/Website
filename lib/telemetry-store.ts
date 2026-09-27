@@ -36,7 +36,6 @@ function tableName() {
  */
 export async function recordTelemetryBatch(
   batch: TelemetryBatch,
-  country: string | undefined,
   now = new Date(),
 ) {
   const nowMs = now.getTime();
@@ -124,7 +123,6 @@ export async function recordTelemetryBatch(
   set("buildNumber", batch.buildNumber);
   set("iosVersion", batch.iosVersion);
   set("expireAt", Math.floor(nowMs / 1_000) + RETENTION_DAYS * 86_400);
-  if (country) set("country", country);
   for (const [field, at] of milestones) setOnce(field, at);
   for (const flag of flags) set(flag, true);
   if (lastAlarmActiveAt) set("lastAlarmActiveAt", lastAlarmActiveAt);

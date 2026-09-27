@@ -62,7 +62,6 @@ export type PermissionKind = "calendar" | "alarm" | "notification";
 export type InstallRecord = {
   installId: string;
   channel: TelemetryChannel;
-  country?: string;
   appVersion: string;
   iosVersion: string;
   firstSeenAt: string;

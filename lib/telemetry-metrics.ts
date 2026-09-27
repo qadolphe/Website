@@ -24,7 +24,6 @@ export type TelemetrySummary = {
   permissions: PermissionStat[];
   features: FeatureStat[];
   versions: Breakdown;
-  countries: Breakdown;
   providers: Breakdown;
 };
 
@@ -127,7 +126,6 @@ export function summarize(installs: InstallRecord[], now = new Date()): Telemetr
       feature("Hit a sync error", "count_syncFailed"),
     ],
     versions: tally(installs.map((i) => i.appVersion)),
-    countries: tally(installs.map((i) => i.country)),
     providers: tally(installs.flatMap((i) => [...(i.calendarProviders ?? [])])),
   };
 }
