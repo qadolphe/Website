@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* "Night Swim", matching the app: midnight navy, starlight gold, aqua. */
 :root {
-  color-scheme: light;
-  --background: #FFCD93;
-  --foreground: #0a0a0a;
-  --muted: #4a4a4a;
-  --accent: #f59e0b;
-  --panel: rgba(0, 0, 0, 0.04);
-  --border: rgba(0, 0, 0, 0.1);
+  color-scheme: dark;
+  --background: #070c1a;
+  --foreground: #eef0f4;
+  --muted: #a6b2c8;
+  --accent: #f4c66a;
+  --font-rounded: ui-rounded, "SF Pro Rounded", "Nunito", system-ui, sans-serif;
 }
 
 * {
@@ -17,7 +17,7 @@
 }
 
 html {
-  background: #FFCD93;
+  background: var(--background);
   min-height: 100%;
 }
 
@@ -35,7 +35,11 @@ a {
   text-decoration: none;
 }
 
+.font-rounded {
+  font-family: var(--font-rounded);
+}
+
 ::selection {
-  background: rgba(245, 158, 11, 0.35);
-  color: #fff8eb;
+  background: rgba(244, 198, 106, 0.35);
+  color: #070c1a;
 }

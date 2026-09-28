@@ -2,34 +2,28 @@ import Link from "next/link";
 
 export default function PrivacyPage() {
   return (
-    <main className="flex min-h-[100dvh] flex-col bg-[#0a0a0a] text-[#ededed] antialiased selection:bg-[#f59e0b] selection:text-black">
-      <style dangerouslySetInnerHTML={{ __html: `
-        :root {
-          --font-rounded: ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, sans-serif;
-        }
-        .font-rounded { font-family: var(--font-rounded); }
-      `}} />
+    <main className="flex min-h-[100dvh] flex-col bg-[#070c1a] text-[#eef0f4] antialiased selection:bg-[#f4c66a] selection:text-[#070c1a]">
 
       <header className="flex w-full items-center justify-between p-6 sm:p-12 lg:p-16 font-rounded">
-        <Link href="/" className="text-xl tracking-tight text-white transition-colors hover:text-[#f59e0b]" style={{ fontWeight: 900 }}>EarlyOtter</Link>
-        <nav className="flex items-center gap-6 text-[15px] font-bold text-neutral-500">
+        <Link href="/" className="text-xl tracking-tight text-white transition-colors hover:text-[#f4c66a]" style={{ fontWeight: 900 }}>EarlyOtter</Link>
+        <nav className="flex items-center gap-6 text-[15px] font-bold text-[#8390a8]">
           <Link href="/privacy" className="text-white">Privacy</Link>
           <Link href="/support" className="transition-colors hover:text-white">Support</Link>
         </nav>
       </header>
 
       <article className="mx-auto w-full max-w-4xl px-6 pb-24 sm:px-12 lg:px-16 font-rounded">
-        <div className="mb-16 border-b border-neutral-800 pb-16">
-          <p className="mb-4 text-[13px] font-bold tracking-widest text-[#f59e0b] uppercase">
+        <div className="mb-16 border-b border-white/10 pb-16">
+          <p className="mb-4 text-[13px] font-bold tracking-widest text-[#f4c66a] uppercase">
             Legal
           </p>
           <h1 className="text-5xl leading-[1.05] tracking-tight text-white sm:text-7xl" style={{ fontWeight: 900 }}>
             Privacy.
           </h1>
-          <p className="mt-6 text-lg font-bold text-neutral-500">Last Updated: September 2026</p>
+          <p className="mt-6 text-lg font-bold text-[#8390a8]">Last Updated: September 2026</p>
         </div>
 
-        <div className="space-y-12 text-lg font-medium leading-relaxed text-neutral-400">
+        <div className="space-y-12 text-lg font-medium leading-relaxed text-[#a6b2c8]">
           <section>
             <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>1. General Calendar Data & Notifications</h2>
             <p>EarlyOtter requires access to your calendar to calculate accurate wake-up times. All calendar data is processed strictly locally on your device. EarlyOtter utilizes local notifications and AlarmKit to schedule wake-up alerts entirely on your device. EarlyOtter does not transmit, store, or sell your calendar data to external servers or third parties.</p>
@@ -78,7 +72,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="mb-3 text-2xl tracking-tight text-white" style={{ fontWeight: 800 }}>10. Contact Us</h2>
-            <p>If you have any questions, contact <a href="mailto:support@earlyotter.com" className="text-[#f59e0b] hover:text-white transition-colors">support@earlyotter.com</a>.</p>
+            <p>If you have any questions, contact <a href="mailto:support@earlyotter.com" className="text-[#f4c66a] hover:text-white transition-colors">support@earlyotter.com</a>.</p>
           </section>
         </div>
       </article>
